@@ -1,0 +1,14 @@
+#include <QApplication>
+#include <QObject>
+#include "fenPrincipale.h"
+
+int main(int argc, char* argv[])
+{
+    QApplication app(argc, argv);
+
+    FenPrincipale fenetre;
+    fenetre.show();
+
+    return app.exec();
+}
+
