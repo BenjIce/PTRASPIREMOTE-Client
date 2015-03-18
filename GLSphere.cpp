@@ -57,7 +57,7 @@ void GLSphere::setDeltaCons(double deltaCons){
 void GLSphere::initializeGL()
 {
     glShadeModel(GL_SMOOTH);                                // Active le Smooth Shading
-        glClearColor(1.0f, 1.0f, 1.0f, 0.5f);				// Arrière-plan noir
+        glClearColor(0.7f, 0.7f, 0.7f, 0.5f);				// Arrière-plan noir (po
         glClearDepth(1.0f);									// Depth Buffer
         glEnable(GL_DEPTH_TEST);							// Active le Depth Testing
         glDepthFunc(GL_LEQUAL);								// The Type Of Depth Testing To Do
@@ -94,7 +94,7 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
-        glLineWidth(1);
+        glLineWidth(3);
         glBegin(GL_LINES);
             glColor3f(0.0f,1.0f,1.0f);                               // Couleur bleu ciel : x
             glVertex3f(0.0f,0.0f,-r);                              // Début Axe : x
@@ -115,7 +115,7 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
-        glLineWidth(1);
+        glLineWidth(2);
         glBegin(GL_LINES);
             glColor3f(1.0f,0.0f,0.0f);                              //Couleur rouge
             glVertex3f(0.0f,0.0f,0.0f);                              // Début Axe Angle
@@ -130,7 +130,7 @@ void GLSphere::paintGL()
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
         glRotatef(omCons_var*(360/(2*M_PI)),0.0f,r,0.0f);
-        glLineWidth(1);
+        glLineWidth(2);
         glBegin(GL_LINES);
             glColor3f(1.0f,0.0f,0.0f);                              //Couleur rouge
             glVertex3f(0.0f,0.0f,0.0f);                             //début angle omega
@@ -144,7 +144,7 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
-        glLineWidth(1);
+        glLineWidth(2);
         glBegin(GL_LINES);
             glColor3f(0.0f,1.0f,0.0f);                              //Couleur verte
             glVertex3f(0.0f,0.0f,0.0f);                              // Début Axe Angle
@@ -159,7 +159,7 @@ void GLSphere::paintGL()
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
         glRotatef(om_var*(360/(2*M_PI)),0.0f,r,0.0f);
-        glLineWidth(1);
+        glLineWidth(2);
         glBegin(GL_LINES);
             glColor3f(0.0f,1.0f,0.0f);                              //Couleur verte
             glVertex3f(0.0f,0.0f,0.0f);                             //début angle omega
@@ -174,11 +174,12 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
+        glLineWidth(1.0);
         glBegin(GL_LINE_STRIP);
         for(int i=0; i<250; i++)
         {
             double angle = r*M_PI*i/250;
-            glColor3f(0.0f,0.0f,1.0f);
+            glColor3f(0.0f,0.0f,0.0f);
             glVertex3f(cos(angle)*r,0.0f,sin(angle)*r );
         }
         glEnd();
@@ -189,11 +190,12 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
+        glLineWidth(1.0);
         glBegin(GL_LINE_STRIP);
         for(int i=0; i<250; i++)
         {
             double angle = r*M_PI*i/250;
-            glColor3f(0.0f,0.0f,1.0f);
+            glColor3f(0.0f,0.0f,0.0f);
             glVertex3f(0.0f,cos(angle)*r,sin(angle)*r);
         }
         glEnd();
@@ -204,11 +206,12 @@ void GLSphere::paintGL()
         glRotatef(xRot/vitesse, 1.0, 0.0, 0.0);
         glRotatef(yRot/vitesse, 0.0, 1.0, 0.0);
         glRotatef(zRot/vitesse, 0.0, 0.0, 1.0);
+        glLineWidth(1.0);
         glBegin(GL_LINE_STRIP);
         for(int i=0; i<250; i++)
         {
             double angle = r*M_PI*i/250;
-            glColor3f(0.0f,0.0f,1.0f);
+            glColor3f(0.0f,0.0f,0.0f);
             glVertex3f(cos(angle)*r,sin(angle)*r,0.0f);
         }
         glEnd();
@@ -296,7 +299,7 @@ void GLSphere::paintGL()
             glLineWidth(1);
             glBegin(GL_QUADS);                                  // Dessin du quadratique
                 GLUquadric* sphere = gluNewQuadric();           // Nouvel objet GLUquadratic, la sphère
-                    glColor4f(1.0f,1.0f,1.0f,0.1f);             // Couleur de la sphère
+                    glColor4f(1.0f,1.0f,1.0f,0.3f);             // Couleur de la sphère
                     gluQuadricDrawStyle(sphere,GLU_FILL);       // Style de la sphère (ici, pleine)
                     //gluQuadricTexture(sphere,GL_TRUE);        // Textures de la sphère
                     gluSphere(sphere,r,40,40);               // Sphere de rayon 2 avec 20 latitudes et 35 longitudes
