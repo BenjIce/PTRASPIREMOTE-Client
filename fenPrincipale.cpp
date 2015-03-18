@@ -215,69 +215,69 @@ FenPrincipale::FenPrincipale() {
 
     // ----- 2EME GROUPBOX -----
 
-    // Création de la GroupBox
-    QGroupBox *groupbox2 = new QGroupBox("Valeurs des angles", this);
+//    // Création de la GroupBox
+//    QGroupBox *groupbox2 = new QGroupBox("Valeurs des angles", this);
 
-    // Création des Widgets
+//    // Création des Widgets
 
-    //QLine
-    QSlider *slider_delta = new QSlider(Qt::Horizontal,this);
-    slider_delta->setRange(-90,90);
-    QSlider *slider_omega = new QSlider(Qt::Horizontal,this);
-    slider_omega->setRange(-180,180);
-    QLCDNumber *x_disp = new QLCDNumber;
-    x_disp->setSegmentStyle(QLCDNumber::Flat);
-    QLCDNumber *y_disp = new QLCDNumber;
-    y_disp->setSegmentStyle(QLCDNumber::Flat);
-    QLCDNumber *z_disp = new QLCDNumber;
-    z_disp->setSegmentStyle(QLCDNumber::Flat);
+//    //QLine
+//    QSlider *slider_delta = new QSlider(Qt::Horizontal,this);
+//    slider_delta->setRange(-90,90);
+//    QSlider *slider_omega = new QSlider(Qt::Horizontal,this);
+//    slider_omega->setRange(-180,180);
+//    QLCDNumber *x_disp = new QLCDNumber;
+//    x_disp->setSegmentStyle(QLCDNumber::Flat);
+//    QLCDNumber *y_disp = new QLCDNumber;
+//    y_disp->setSegmentStyle(QLCDNumber::Flat);
+//    QLCDNumber *z_disp = new QLCDNumber;
+//    z_disp->setSegmentStyle(QLCDNumber::Flat);
 
-    QSlider *slider_deltaCons = new QSlider(Qt::Horizontal,this);
-    slider_deltaCons->setRange(-90,90);
-    QSlider *slider_omegaCons = new QSlider(Qt::Horizontal,this);
-    slider_omegaCons->setRange(-180,180);
-    QLCDNumber *xCons_disp = new QLCDNumber;
-    xCons_disp->setSegmentStyle(QLCDNumber::Flat);
-    QLCDNumber *yCons_disp = new QLCDNumber;
-    yCons_disp->setSegmentStyle(QLCDNumber::Flat);
-    QLCDNumber *zCons_disp = new QLCDNumber;
-    zCons_disp->setSegmentStyle(QLCDNumber::Flat);
+//    QSlider *slider_deltaCons = new QSlider(Qt::Horizontal,this);
+//    slider_deltaCons->setRange(-90,90);
+//    QSlider *slider_omegaCons = new QSlider(Qt::Horizontal,this);
+//    slider_omegaCons->setRange(-180,180);
+//    QLCDNumber *xCons_disp = new QLCDNumber;
+//    xCons_disp->setSegmentStyle(QLCDNumber::Flat);
+//    QLCDNumber *yCons_disp = new QLCDNumber;
+//    yCons_disp->setSegmentStyle(QLCDNumber::Flat);
+//    QLCDNumber *zCons_disp = new QLCDNumber;
+//    zCons_disp->setSegmentStyle(QLCDNumber::Flat);
 
-    // Création des layouts de la GroupBox2 et ajout des Widgets
-    QGridLayout *layout2 = new QGridLayout;
-    layout2->setColumnStretch(1,2);
-    QFormLayout *coordonnees = new QFormLayout;
-    coordonnees->addRow("Mesure de delta", slider_delta);
-    coordonnees->addRow("Mesure de omega", slider_omega);
-    coordonnees->addRow("Mesure - x :",x_disp);
-    coordonnees->addRow("Mesure - y :",y_disp);
-    coordonnees->addRow("Mesure - z :",z_disp);
+//    // Création des layouts de la GroupBox2 et ajout des Widgets
+//    QGridLayout *layout2 = new QGridLayout;
+//    layout2->setColumnStretch(1,2);
+//    QFormLayout *coordonnees = new QFormLayout;
+//    coordonnees->addRow("Mesure de delta", slider_delta);
+//    coordonnees->addRow("Mesure de omega", slider_omega);
+//    coordonnees->addRow("Mesure - x :",x_disp);
+//    coordonnees->addRow("Mesure - y :",y_disp);
+//    coordonnees->addRow("Mesure - z :",z_disp);
 
-    coordonnees->addRow("Consigne de delta", slider_deltaCons);
-    coordonnees->addRow("Consigne de omega", slider_omegaCons);
-    coordonnees->addRow("Consigne - x :",xCons_disp);
-    coordonnees->addRow("Consigne - y :",yCons_disp);
-    coordonnees->addRow("Consigne - z :",zCons_disp);
+//    coordonnees->addRow("Consigne de delta", slider_deltaCons);
+//    coordonnees->addRow("Consigne de omega", slider_omegaCons);
+//    coordonnees->addRow("Consigne - x :",xCons_disp);
+//    coordonnees->addRow("Consigne - y :",yCons_disp);
+//    coordonnees->addRow("Consigne - z :",zCons_disp);
 
-    // Ajout du Layout à la GroupBox2
-    layout2->addLayout(coordonnees,1,1);
-    groupbox2->setLayout(layout2);
+//    // Ajout du Layout à la GroupBox2
+//    layout2->addLayout(coordonnees,1,1);
+//    groupbox2->setLayout(layout2);
 
-    // Ajout de la GroupBox2 au Layout Principal
-    layoutPrincipal->addWidget(groupbox2,2,1);
+//    // Ajout de la GroupBox2 au Layout Principal
+//    layoutPrincipal->addWidget(groupbox2,2,1);
 
     //Connections
-    QObject::connect(slider_delta,SIGNAL(valueChanged(int)),this,SLOT(MAJdelta(int)));
-    QObject::connect(slider_omega,SIGNAL(valueChanged(int)),this,SLOT(MAJomega(int)));
-    QObject::connect(this,SIGNAL(xChanged(double)),x_disp,SLOT(display(double)));
-    QObject::connect(this,SIGNAL(yChanged(double)),y_disp,SLOT(display(double)));
-    QObject::connect(this,SIGNAL(zChanged(double)),z_disp,SLOT(display(double)));
+    //QObject::connect(slider_delta,SIGNAL(valueChanged(int)),this,SLOT(MAJdelta(int)));
+    //QObject::connect(slider_omega,SIGNAL(valueChanged(int)),this,SLOT(MAJomega(int)));
+    //QObject::connect(this,SIGNAL(xChanged(double)),x_disp,SLOT(display(double)));
+    //QObject::connect(this,SIGNAL(yChanged(double)),y_disp,SLOT(display(double)));
+    //QObject::connect(this,SIGNAL(zChanged(double)),z_disp,SLOT(display(double)));
 
-    QObject::connect(slider_deltaCons,SIGNAL(valueChanged(int)),this,SLOT(MAJdeltaCons(int)));
-    QObject::connect(slider_omegaCons,SIGNAL(valueChanged(int)),this,SLOT(MAJomegaCons(int)));
-    QObject::connect(this,SIGNAL(xConsChanged(double)),xCons_disp,SLOT(display(double)));
-    QObject::connect(this,SIGNAL(yConsChanged(double)),yCons_disp,SLOT(display(double)));
-    QObject::connect(this,SIGNAL(zConsChanged(double)),zCons_disp,SLOT(display(double)));
+    QObject::connect(txtTiltAngle,SIGNAL(textChanged(QString)),this,SLOT(MAJdeltaCons(QString)));
+    QObject::connect(txtPanAngle,SIGNAL(textChanged(QString)),this,SLOT(MAJomegaCons(QString)));
+    //QObject::connect(this,SIGNAL(xConsChanged(double)),xCons_disp,SLOT(display(double)));
+    //QObject::connect(this,SIGNAL(yConsChanged(double)),yCons_disp,SLOT(display(double)));
+    //QObject::connect(this,SIGNAL(zConsChanged(double)),zCons_disp,SLOT(display(double)));
 
 
 
@@ -1031,9 +1031,9 @@ void FenPrincipale::MAJomega(int omega){
     }
 }
 
-void FenPrincipale::MAJdeltaCons(int deltaCons){
+void FenPrincipale::MAJdeltaCons(QString deltaCons){
 
-            deltaCons_value = (double(deltaCons)/180)*M_PI;
+            deltaCons_value = (deltaCons.toDouble()/180)*M_PI;
             emit deltaConsChanged(deltaCons_value);
 
             xCons = 2*cos(deltaCons_value)*cos(omegaCons_value);
@@ -1049,9 +1049,9 @@ void FenPrincipale::MAJdeltaCons(int deltaCons){
             //sphere->setOmega(omega_value);
 }
 
-void FenPrincipale::MAJomegaCons(int omegaCons){
+void FenPrincipale::MAJomegaCons(QString omegaCons){
 
-    omegaCons_value = (double(omegaCons)/180)*M_PI;
+    omegaCons_value = (omegaCons.toDouble()/180)*M_PI;
     emit omegaConsChanged(omegaCons_value);
 
     xCons = 2*cos(deltaCons_value)*cos(omegaCons_value);

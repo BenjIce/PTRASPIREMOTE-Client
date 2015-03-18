@@ -57,7 +57,7 @@ void GLSphere::setDeltaCons(double deltaCons){
 void GLSphere::initializeGL()
 {
     glShadeModel(GL_SMOOTH);                                // Active le Smooth Shading
-        glClearColor(0.0f, 0.0f, 0.0f, 0.5f);				// Arrière-plan noir
+        glClearColor(1.0f, 1.0f, 1.0f, 0.5f);				// Arrière-plan noir
         glClearDepth(1.0f);									// Depth Buffer
         glEnable(GL_DEPTH_TEST);							// Active le Depth Testing
         glDepthFunc(GL_LEQUAL);								// The Type Of Depth Testing To Do

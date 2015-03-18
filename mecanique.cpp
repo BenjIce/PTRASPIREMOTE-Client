@@ -18,6 +18,7 @@ void Mecanique::Angle2Pos(double pan, double tilt, double *X, double *Y, double 
 	*Y = -O2Mz2*sin(tilt)*sin(pan) + OO1y;
 	*Z = O2Mz2*cos(tilt) + O1O2z1 + OO1z;
 }
+
 // differentes conversions cm vers degre en fonction des boutons coches
 void Mecanique::Pos2AngleX(double *pan, double *tilt, double X) {
 	*pan = 0.0;

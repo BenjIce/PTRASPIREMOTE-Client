@@ -67,8 +67,8 @@ class FenPrincipale : public QMainWindow {
 
     void MAJdelta(int delta);
     void MAJomega(int omega);
-    void MAJdeltaCons(int deltaCons);
-    void MAJomegaCons(int omegaCons);
+    void MAJdeltaCons(QString deltaCons);
+    void MAJomegaCons(QString omegaCons);
 
 signals:
      void deltaChanged(double newDelta);
@@ -204,7 +204,7 @@ signals:
 		//
 		// memoire position
 		//
-		float pan_prec, tilt_prec; // consigne précédent
+		float pan_prec, tilt_prec; // consigne prï¿½cï¿½dent
 		float pan,tilt; // position actuelle
 		float pan_avant,tilt_avant; // position instants d'avant
 		float pan_cons,tilt_cons; // consigne
